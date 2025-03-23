@@ -32,10 +32,6 @@ function addCart(item) {
   const verifyProduct = cart.find((product) => product.id === item.id);
 
   if (verifyProduct) {
-    document
-      .getElementsByClassName("shoppingCart")[0]
-      .classList.remove("iconCart");
-
     // Si ya existe, incrementa su cantidad
     verifyProduct.quantity += 1;
   } else {
@@ -43,7 +39,10 @@ function addCart(item) {
     //crea propiedad quantity en item e inicializa con valor 1
     const itemTemp = { ...item, quantity: 1 };
     cart.push(itemTemp);
-
+    //mostrar cart si está oculto, al añadir un elemento
+    document
+      .getElementsByClassName("shoppingCart")[0]
+      .classList.remove("iconCart");
     document.getElementById("img_active").style.display = "none";
   }
 
