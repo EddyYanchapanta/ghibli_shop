@@ -39,10 +39,11 @@ function addCart(item) {
     //crea propiedad quantity en item e inicializa con valor 1
     const itemTemp = { ...item, quantity: 1 };
     cart.push(itemTemp);
+
+    document.getElementById("img_active").style.display = "none";
   }
   renderCart(); // Añadir ítem a la lista
 }
-console.log(addCart);
 
 function renderCart() {
   const cartSection = document.querySelector(".cart");
@@ -89,7 +90,7 @@ function renderCart() {
 
   // Calcular el total considerando la cantidad
   const total = cart.reduce(
-    (sum, item) => sum + item.precio * (item.quantity || 1),
+    (sum, item) => sum + item.precio * item.quantity,
     0
   );
 
@@ -100,27 +101,51 @@ function renderCart() {
 
 const emptyCart = (cart) => {
   Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Esta acción no se puede revertir",
+    title: "Empty your shopping cart?",
+    text: "All items will be removed.",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Sí, eliminar",
-    cancelButtonText: "Cancelar",
+    confirmButtonText: "Yes, remove",
+    cancelButtonText: "Cancel",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("¡Eliminado!", "El registro ha sido eliminado.", "success");
+      Swal.fire("Cart is empty", "All items have been removed", "success");
       voidCart(cart);
     }
   });
 };
 
+//vaciar el carrito de la compra
 const voidCart = (cart) => {
   const cartItems = document.querySelector(".cart");
   cartItems.innerHTML = "";
   //vaciar el array del carrito
   cart.splice(0, cart.length);
+  document.getElementById("img_active").style.display = "";
 };
 
-const buyCart = (cart) => {};
+const buyCart = (cart) => {
+  if (cart.length == 0) {
+    Swal.fire({
+      title: "Cart is empty!!",
+      text: "Please, add your product to continue shopping",
+      icon: "error",
+      confirmButtonColor: "#ff6f61",
+    });
+  } else {
+    const total = cart.reduce(
+      (sum, item) => sum + item.precio * item.quantity,
+      0
+    );
+
+    Swal.fire({
+      icon: "success",
+      title: "Thanks for shopping!!!",
+      text: `Total amount: ${total}€`,
+      confirmButtonColor: "#ff6f61",
+    });
+    voidCart(cart);
+  }
+};
