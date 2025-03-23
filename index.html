@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GHIBBBLI Shop</title>
+    <title>GHIBBBLI Poster Shop</title>
     <script src="./js/data.js"></script>
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -12,17 +12,20 @@
 
 <body>
     <header>
-        <nav>
+        <div>
             <figure class="logo">
-                <img src="./assets/ghibli-icon.png" alt="">
+                <img src="./assets/icons/logo.png" alt="">
             </figure>
-            <h1>Supermarket GHIBBBLI</h1>
-            <div class="navbar">
+            <h1>Posters GHIBBBLI</h1>
+
+            <button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <nav>
+            <div class="menu">
                 <p>Shop</p>
                 <p>Others</p>
                 <p>About us</p>
             </div>
-            <button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button>
         </nav>
     </header>
 
@@ -37,10 +40,10 @@
         </section>
         <!-- Shopping Cart -->
         <section>
-            <div class="shoppingCart hidden">
+            <div class="shoppingCart">
                 <h3>Shopping Cart</h3>
                 <div class="cart"></div>
-                <img src="./assets/ghibli-icon.png" alt="" id="img_active">
+                <img src="./assets/icons/icon-cart.png" alt="" id="img_active">
                 <button class="emptyButton">Delete Cart</button>
                 <button class="buyButton">Buy</button>
             </div>
@@ -50,7 +53,8 @@
 
 
     <footer>
-        <h3>copyright</h3>
+        <h3>Website ©Ergo Proxy One 2025. All images © Ghibli</h3>
+
     </footer>
 
     <script src="./js/function.js"></script>

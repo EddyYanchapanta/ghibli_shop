@@ -18,7 +18,7 @@ const productos = [
   {
     id: 3,
     nombre: "Tarta del Bosque Encantado",
-    imagen: "./assets/tarta_bosque.jpeg",
+    imagen: "./assets/products/tarta_bosque.jpeg",
     descripcion: "Tarta mágica con ingredientes del bosque.",
     precio: 12,
     stock: 15,

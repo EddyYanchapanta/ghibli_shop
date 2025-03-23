@@ -32,6 +32,10 @@ function addCart(item) {
   const verifyProduct = cart.find((product) => product.id === item.id);
 
   if (verifyProduct) {
+    document
+      .getElementsByClassName("shoppingCart")[0]
+      .classList.remove("iconCart");
+
     // Si ya existe, incrementa su cantidad
     verifyProduct.quantity += 1;
   } else {
@@ -42,6 +46,7 @@ function addCart(item) {
 
     document.getElementById("img_active").style.display = "none";
   }
+
   renderCart(); // Añadir ítem a la lista
 }
 
@@ -148,4 +153,9 @@ const buyCart = (cart) => {
     });
     voidCart(cart);
   }
+};
+
+const toggleCart = () => {
+  const cartButton = document.querySelector(".shoppingCart");
+  cartButton.classList.toggle("iconCart");
 };

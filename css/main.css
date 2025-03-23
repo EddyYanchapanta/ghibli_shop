@@ -25,6 +25,10 @@ footer {
   position: static;
   bottom: 0;
 }
+.iconCart {
+  display: hidden;
+  opacity: 0;
+}
 
 /* main */
 /* title */
@@ -48,6 +52,7 @@ img {
 
 .container {
   width: 400px;
+  margin: 0 auto;
 }
 
 .listProducts article {
