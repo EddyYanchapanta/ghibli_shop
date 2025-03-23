@@ -1,17 +1,17 @@
 const productos = [
   {
     id: 1,
-    nombre: "Hamburguesa Clásica",
-    imagen: "img/hamburguesa.jpg",
-    descripcion: "Deliciosa hamburguesa con ingredientes frescos.",
+    nombre: "Caramelos Ghibbbli",
+    imagen: "img/caramelos.jpg",
+    descripcion: "Caramelos varios.",
     precio: 10,
     stock: 20,
   },
   {
     id: 2,
-    nombre: "Patatas Fritas",
+    nombre: "Turron de Dragon",
     imagen: "img/patatas.jpg",
-    descripcion: "Crujientes patatas fritas con sal.",
+    descripcion: "Turron de chocolate.",
     precio: 5,
     stock: 50,
   },
@@ -39,7 +39,7 @@ const productos = [
     precio: 9,
     stock: 30,
   },
-  {
+  /* {
     id: 6,
     nombre: "Sopa de la Estrella Fugaz",
     imagen: "img/sopa_estrella.jpg",
@@ -158,5 +158,5 @@ const productos = [
     descripcion: "Galletas con un toque especiado y atrevido.",
     precio: 7,
     stock: 25,
-  },
+  }, */
 ];

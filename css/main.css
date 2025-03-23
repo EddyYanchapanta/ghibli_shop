@@ -1,15 +1,23 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+@import url(reset.css);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+/* header */
 header {
   background-color: aquamarine;
   width: 100%;
   text-align: center;
 }
+.logo img {
+  max-width: 5rem;
+}
 
+/* footer
+ */
 footer {
   background-color: aquamarine;
   width: 100%;
@@ -17,3 +25,37 @@ footer {
   position: static;
   bottom: 0;
 }
+
+/* main */
+/* title */
+main h1 {
+  text-align: center;
+}
+.promo {
+  color: violet;
+}
+
+/* products grid */
+main section div article {
+  display: grid;
+  grid-template-columns: (3, 1fr);
+}
+
+img {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 400px;
+}
+
+.listProducts article {
+  padding: 20px;
+}
+
+.shoppingCart {
+  border: 1px solid green;
+  width: 300px;
+}
+/* main */
