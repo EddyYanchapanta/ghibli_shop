@@ -10,15 +10,19 @@
   gap: 3rem 2rem;
   color: rgb(8, 3, 64);
 }
+:root {
+  --primary-color: rgb(0, 176, 240);
+  --shadow-box: 3px 3px 5px rgba(0, 176, 240, 0.5);
+}
 button {
   cursor: pointer;
   border-radius: 5px;
   padding: 4px;
 }
-
-:root {
-  --primary-color: rgb(0, 176, 240);
-  --shadow-box: 3px 3px 5px rgba(0, 176, 240, 0.5);
+.container {
+  width: 650px;
+  margin: 0 auto;
+  position: relative;
 }
 
 #buyButton {
@@ -77,32 +81,39 @@ h1 {
   text-align: center;
 }
 .logo img {
-  max-width: 7.5rem;
-  padding: 10px;
+  max-width: 10rem;
+  padding: 5px;
+  margin: 0 auto;
 }
 .cart-icon {
   font-size: 2rem;
   background: none;
   border: none;
   text-align: center;
+  position: fixed;
+  top: 5px;
+  z-index: 1;
 }
 .cart-icon :hover {
   color: whitesmoke;
 }
-
-/* footer
- */
-footer {
-  background-color: var(--primary-color);
+.menu {
   width: 100%;
-  text-align: center;
-  position: static;
-  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  p {
+    font-size: 1.5rem;
+    margin: 5px;
+  }
+}
+.menu p:hover {
+  color: grey;
 }
 
 /* main */
 /* title */
-main h1 {
+main .container {
   text-align: center;
 }
 .promo {
@@ -127,11 +138,6 @@ main h1 {
     transform: scale(1.1);
     box-shadow: var(--shadow-box);
   }
-}
-
-.container {
-  width: 650px;
-  margin: 0 auto;
 }
 
 main .container img {
@@ -187,8 +193,8 @@ main .container img {
 }
 .shoppingCart {
   position: fixed;
-  top: 10%;
-  left: 1%;
+  top: 11%;
+  right: 1%;
   border: 2px solid var(--primary-color);
   width: 23rem;
   border-radius: 5px;
@@ -242,3 +248,36 @@ main .container img {
   opacity: 0;
 }
 /* main */
+
+/* footer
+ */
+footer {
+  width: 100%;
+  text-align: center;
+  position: static;
+  bottom: 0;
+  h3 {
+    padding: 10px;
+  }
+}
+
+@media (width<720px) {
+  .listProducts {
+    grid-template-columns: 1fr;
+  }
+  .promo {
+    font-size: 1.5rem;
+  }
+}
+
+@media (width >=1200px) {
+  .container {
+    width: 1200px;
+  }
+  .listProducts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cart-icon {
+    right: 5%;
+  }
+}
