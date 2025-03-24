@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GHIBBBLI Poster Shop</title>
-    <script src="./js/data.js"></script>
+    <link rel="icon" href="/assets/icons/ghibli.ico" type="image/x-icon">
+    <!-- carga los productos del fichero local -->
+    <!-- <script src="./js/data.js"></script> -->
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
-    <header>
-        <div>
+    <header id="color-gradiant">
+        <div class="container grid-header">
             <figure class="logo">
                 <img src="./assets/icons/logo.png" alt="">
             </figure>
@@ -20,7 +22,7 @@
 
             <button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button>
         </div>
-        <nav>
+        <nav class="container">
             <div class="menu">
                 <p>Shop</p>
                 <p>Others</p>
@@ -31,11 +33,13 @@
 
     <main>
         <!-- title -->
-        <h1 class="promo">Your Favourite Ghibbbli Posters</h1>
+
         <!-- Products -->
         <section class="container">
+            <h1 class="promo">Choose Your Favourite Ghibbbli Posters</h1>
+            <img src="./assets/icons/landing.png" alt="">
+            <!-- pintar lista de productos -->
             <div class="listProducts">
-
             </div>
         </section>
         <!-- Shopping Cart -->
@@ -44,17 +48,19 @@
                 <h3>Shopping Cart</h3>
                 <div class="cart"></div>
                 <img src="./assets/icons/icon-cart.png" alt="" id="img_active">
-                <button class="emptyButton">Delete Cart</button>
-                <button class="buyButton">Buy</button>
+                <div class="cartButtons">
+                    <button class="emptyButton" id="emptyButton">Delete Cart</button>
+                    <button class="buyButton" id="buyButton">Buy</button>
+                </div>
             </div>
         </section>
     </main>
 
 
 
-    <footer>
-        <h3>Website ©Ergo Proxy One 2025. All images © Ghibli</h3>
-
+    <footer id="color-gradiant">
+        <h3>Website ©Ergo Proxy One 2025. </h3>
+        <h3>All images © Ghibli</h3>
     </footer>
 
     <script src="./js/function.js"></script>
